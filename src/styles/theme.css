@@ -1,0 +1,59 @@
+/* THEME START */
+
+[data-theme="minimal"] {
+    /* MinimalTheme styles go here */
+    background-image: url('/Assets/Images/login-bg.webp');
+    background-color: #FAE1D8;
+    background-size: cover;
+}
+
+[data-theme="abstract"] {
+    /* Abstract theme styles go here */
+    color: rgba(8, 208, 41, 1);
+    background-color: rgba(8, 208, 41, 0.3);
+}
+
+[data-theme="quantum"] {
+    /* Quantum theme styles go here */
+}
+
+/* THEME END */
+
+/* Pattern */
+.Cross {
+    /* background-image: url('/Assets/Images/login-bg.webp'); */
+    background-color: #f9f9f9;
+    /* background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(105,9,121,0.8407738095238095) 35%, rgba(0,212,255,1) 100%); */
+}
+
+.Hypnotic {
+    /* background-image: url('/Assets/Images/pattern1.png'); */
+    background-color: #FAE1D8;
+    background-size: auto!important;
+}
+
+.Plus {
+    /* background-image: url('/Assets/Images/pattern2.png'); */
+    background-color: #FAE1D8;
+    background-size: auto!important;
+}
+
+.Polkadot {
+    /* background-image: url('/Assets/Images/pattern3.png'); */
+    background-color: #FAE1D8;
+    background-size: auto!important;
+}
+
+.Wave {
+    /* background-image: url('/Assets/Images/pattern4.png'); */
+    background-color: #FAE1D8;
+    background-size: auto!important;
+}
+
+.Zigzag {
+    /* background-image: url('/Assets/Images/pattern5.png'); */
+    background-color: #FAE1D8;
+    background-size: auto!important;
+}
+
+/* ----------- */

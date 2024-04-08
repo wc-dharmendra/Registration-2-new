@@ -1,0 +1,23 @@
+.rating-stars {
+    display: flex;
+    align-items: center;
+}
+.star {
+    cursor: pointer;
+    font-size: 32px;
+    margin: 0 8px;
+    color: #F8BB44;
+    line-height: 1;
+}
+.star.selected {
+    color: #F8BB44;
+}
+.star:first-child {
+    margin-left: 0px !important;
+}
+.star.selected:before {
+    content: "\2605";
+    position: absolute;
+    cursor: pointer;
+    color: #F8BB44;
+}

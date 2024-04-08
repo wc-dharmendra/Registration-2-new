@@ -1,0 +1,2920 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "style.css";
+@import "theme.css";
+
+:root {
+  --foreground-rgb: #595C5C;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+  --toastify-color-light: #fff;
+  --toastify-color-dark: #121212;
+  --toastify-color-info: #3498d9 !important;
+  --toastify-color-success: #37A353 !important;
+  --toastify-color-warning: #f1c30b !important;
+  --toastify-color-error: #DE3C34 !important;
+  --toastify-color-transparent: rgba(255, 255, 255, 0.7);
+  --toastify-toast-min-height: 50px !important;
+  --app-height: 100%;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+textarea {
+  resize: none;
+}
+
+.inherit {
+  display: inherit;
+}
+
+body {
+
+  color: #595C5C;
+  /* height: var(--app-height); */
+  /* background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb)); */
+}
+
+.OnGoingEvent {
+  color: #47C97E;
+}
+
+.clipPath {
+  -webkit-clip-path: polygon(100% 0, 0 0, 50% 100%);
+  transform: rotate(180deg);
+}
+
+.clipPathBtm {
+  -webkit-clip-path: polygon(100% 0, 0 0, 50% 100%);
+  transform: rotate(0deg);
+}
+
+.patternBg Button {
+  width: 90px;
+  height: 90px;
+  border: 1px #000 solid;
+  border-radius: 100px;
+  margin: 12px 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.boxShadow {
+  box-shadow: 0 0px 10px #00000015;
+}
+
+.boxShadowBorder {
+  box-shadow: 0px -8px 30px #00000015;
+  border: 1px #f0f0f0 solid;
+}
+
+.far-columns {
+  grid-template-columns: 1fr 1fr;
+}
+.far-columns2 {
+  grid-template-columns: 1fr 1fr;
+}
+.far-columns3 {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.far-columns4 {
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.relative {
+  position: relative !important;
+}
+
+.AddHostInfo svg {
+  fill: #595C5C;
+}
+
+.AddHostInfo button:hover svg {
+  fill: #EFEFF0;
+}
+
+input[type="time"]::-webkit-calendar-picker-indicator {
+  /* background: none; */
+  opacity: 0;
+  display: none;
+}
+
+input[type="time"].showClockIcon::-webkit-calendar-picker-indicator {
+  /* background: initial; */
+  opacity: 1;
+  display: inline-block;
+}
+
+.eventTextarea textarea {
+  @apply font-medium
+}
+
+/* .eventTextarea textarea:focus {
+  border-left: 4px #969498 solid;  
+  border-radius: 0px;
+  padding-left: 10px;
+  transition: all .2s ease;
+  -webkit-transition: all .2s ease;
+  -moz-transition: all .2s ease;
+  -o-transition: all .2s ease;
+  -o-transition: all .2s ease;
+} */
+
+.eventTextarea textarea::placeholder {
+  @apply font-medium;
+  transition: all .2s ease;
+  -webkit-transition: all .2s ease;
+  -moz-transition: all .2s ease;
+  -o-transition: all .2s ease;
+  -o-transition: all .2s ease;
+}
+
+.form-control {
+  @apply rounded-lg mb-3 p-2 border border-slate-200 placeholder:text-gray-400 w-full focus:ring-1 focus:ring-blue-400 text-base focus:outline-none text-[#131517] bg-[#fff];
+}
+
+.buttonStyle {
+  @apply bg-[#333537] text-[#FFFFFF] py-2 px-3 text-[14px] sm:text-[16px] md:text-[16px] lg:text-[16px] rounded-lg;
+}
+
+.buttonRed {
+  @apply bg-[#DE3C34] text-[#FFFFFF] py-2 px-3 text-[14px] sm:text-[16px] md:text-[16px] lg:text-[16px] rounded-lg;
+}
+
+.buttonRed svg {
+  width: 20px;
+  height: 20px;
+}
+
+.labelText {
+  @apply font-medium block relative mb-2 text-sm text-[#595C5C]
+}
+
+.diviverLine {
+  @apply border-t border-slate-300 mt-8 pt-8;
+}
+
+.btn-dark {
+  @apply bg-[#333537] hover:bg-[#131517] text-base text-[#F9F9F9] font-medium rounded-md h-[40px]  transition-all px-3
+}
+
+.btn-light-dark {
+  @apply bg-[#595C5C] text-base text-[#fff] font-medium rounded-md h-[40px] hover:bg-[#131517] transition-all px-3
+}
+
+
+.btn-light {
+  @apply bg-[#dfe0e1] text-[#595C5C] font-medium rounded-md hover:bg-[#595C5C] hover:text-[#fff] hover:fill-white hover:stroke-white transition-all px-3
+}
+
+.input {
+  @apply w-full border text-[#131517] border-[#EBECED] rounded-lg h-[40px] px-2 focus:outline-none focus:border-[#000] hover:border-[#595C5C] transition-all outline-none bg-[#fff]
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px white inset !important;
+  color: #131517 !important;
+  -webkit-text-fill-color: #131517;
+}
+
+.input2 {
+  @apply w-full border border-[#FAFAFA] text-3xl placeholder-[#D4D4D4] rounded-lg h-[40px] px-2 bg-[transparent] transition-all outline-none
+}
+
+.inputURl {
+  @apply w-full border border-[#EBECED] rounded-e-md h-[40px] px-2 focus:outline-none transition-all outline-none text-[#131517]
+}
+
+.textarea {
+  @apply w-full border border-[#EBECED] rounded-lg px-2 py-2 text-sm focus:outline-none focus:border-[#000] hover:border-[#595C5C] transition-all outline-none text-[#131517] bg-[#fff]
+}
+
+.textarea2 {
+  @apply w-full border border-[#EBECED] rounded-lg px-2 py-2 text-sm bg-[#F0F1F1] transition-all outline-none text-[#131517]
+}
+
+.SearchInput {
+  @apply w-full border border-[#EBECED] text-sm rounded-lg focus:outline-none focus:border-[#000] hover:border-[#595C5C] transition-all outline-none text-[#131517]
+}
+
+.SearchLocation {
+  @apply w-full border border-[#E9EAEA] text-sm p-2.5 focus:outline-none focus:border-[#E9EAEA] hover:border-[#E9EAEA] transition-all outline-none bg-[#00000018];
+}
+
+.ModalBoxContainer {
+  @apply relative bg-[#F9F9F9] max-w-[95%] mt-[10px] sm:mt-[30px] md:mt-[30px] lg:mt-[30px] bg-white rounded-2xl z-[1300] m-auto
+}
+
+.ChooseImagePopup {
+  @apply relative bg-[#F9F9F9] max-w-[95%] sm:max-w-[500px] md:max-w-[500px] lg:max-w-[480px]
+}
+
+.addLandmark svg {
+  fill: #595c5c;
+}
+
+.divider-row {
+  position: absolute;
+  bottom: 0;
+  right: 0rem;
+  width: calc(100% - 40px);
+  border-bottom: 1px #dadada solid;
+}
+
+.themePattern:hover svg path {
+  fill: #000000;
+}
+
+.themePattern:hover .label {
+  fill: #000000;
+}
+
+.head {
+  @apply text-xl text-[#131517] font-semibold flex gap-3
+}
+
+.head-sm {
+  @apply text-lg text-[#131517] font-semibold flex gap-3
+}
+
+.LayoutText {
+  @apply text-[#131517] text-[13px] text-center;
+}
+
+.heading-H1 {
+  @apply text-[20px] text-[#131517] font-semibold mb-1;
+}
+
+.Heading-h2 {
+  @apply text-[20px] text-[#131517] font-semibold;
+}
+
+.smallHeading {
+  @apply text-[14px] font-medium mb-2 block text-[#595C5C];
+}
+
+.paragraph {
+  @apply text-[16px]
+}
+
+.paragraphHead {
+  @apply text-[#131517] text-[16px]
+}
+
+.copyLink {
+  @apply bg-[#EFEFF0] absolute top-3 right-3 flex items-center gap-1 rounded-md py-2 px-3 text-[14px] stroke-[#595C5C] hover:stroke-white hover:fill-white hover:bg-[#131517] hover:text-[#FFFFFF]
+}
+
+
+.grayColor {
+  @apply bg-[#939597]
+}
+
+.redColor {
+  @apply bg-[#E4678B]
+}
+
+.purpalColor {
+  @apply bg-[#CB66D3]
+}
+
+.blueColor {
+  @apply bg-[#3D8AFC]
+}
+
+.greenColor {
+  @apply bg-[#4EC881]
+}
+
+.yellowColor {
+  @apply bg-[#FAD765]
+}
+
+.orangeColor {
+  @apply bg-[#FD964B]
+}
+
+.pinkColor {
+  @apply bg-[#FD5B68]
+}
+
+.skyColor {
+  @apply bg-[#429DC3]
+}
+
+.blueLightColor {
+  @apply bg-[#0E94FF]
+}
+
+.lightGreen {
+  @apply bg-[#c0e5c9]
+}
+
+.lightFadeYellow {
+  @apply bg-[#ffe2a0]
+}
+
+.selected .grayColor {
+  @apply border-[#939597] outline outline-[2px] outline-[#939597] outline-offset-2
+}
+
+.selected .redColor {
+  @apply border-[#E4678B] outline outline-[2px] outline-[#E4678B] outline-offset-2
+}
+
+.selected .purpalColor {
+  @apply border-[#CB66D3] outline outline-[2px] outline-[#CB66D3] outline-offset-2
+}
+
+.selected .blueColor {
+  @apply border-[#3D8AFC] outline outline-[2px] outline-[#3D8AFC] outline-offset-2
+}
+
+.selected .greenColor {
+  @apply border-[#4EC881] outline outline-[2px] outline-[#4EC881] outline-offset-2
+}
+
+.selected .yellowColor {
+  @apply border-[#FAD765] outline outline-[2px] outline-[#FAD765] outline-offset-2
+}
+
+.selected .orangeColor {
+  @apply border-[#FD964B] outline outline-[2px] outline-[#FD964B] outline-offset-2
+}
+
+.selected .pinkColor {
+  @apply border-[#FD5B68] outline outline-[2px] outline-[#FD5B68] outline-offset-2
+}
+
+.selected .skyColor {
+  @apply border-[#429DC3] outline outline-[2px] outline-[#429DC3] outline-offset-2
+}
+
+.selected .blueLightColor {
+  @apply border-[#0E94FF] outline outline-[2px] outline-[#0E94FF] outline-offset-2
+}
+
+
+.colorBgImg {
+  @apply flex items-center justify-center gap-1.5
+}
+
+.colorBgImg .dot-ring {
+  @apply border-solid border-2 rounded-full p-[2px] border-transparent
+}
+
+.colorBgImg .selected {
+  @apply border-inherit
+}
+
+.colorPicker {
+  @apply w-[22px] h-[22px] rounded-full border border-[#dfdfdf]
+}
+
+.grayColor.selected {
+  @apply outline outline-offset-2
+}
+
+.FontPickerInfo {
+  @apply grid gap-1
+}
+
+.PickerButton {
+  @apply text-[#969498] opacity-[.6]
+}
+
+.fontType {
+  @apply text-center text-[12px]
+}
+
+.PickerButton.selected {
+  @apply opacity-[100]
+}
+
+.FontPickerInfo .PickerButton .fontSvg {
+  @apply flex border border-solid border-[#13141766] items-center justify-center rounded-lg min-h-[60px] m-1
+}
+
+.FontPickerInfo .PickerButton.selected .fontSvg {
+  @apply border-solid border-[#131517]
+}
+
+.FontPickerInfo .PickerButton.selected .fontSvg svg {
+  fill: #131517;
+}
+
+.FontPickerInfo .PickerButton.selected .fontType {
+  @apply text-[#131517];
+}
+
+.FontPickerInfo .PickerButton:hover {
+  @apply opacity-[100]
+}
+
+.FontPickerInfo .PickerButton:hover .fontSvg {
+  @apply border-solid border-[#131517]
+}
+
+.FontPickerInfo .PickerButton:hover .fontSvg svg {
+  fill: #131517;
+}
+
+.FontPickerInfo .PickerButton:hover .fontType {
+  @apply text-[#131517];
+}
+
+.FontPickerInfo .PickerButton .fontSvg svg {
+  fill: #969498;
+}
+
+.copyLinkInfo span {
+  display: block;
+  font-size: 15px;
+}
+
+.EventTypeInfo {
+  /* overflow-y: auto; */
+  padding: 12px 0px;
+}
+
+.EventTypeInfo li {
+  font-size: 14px;
+  padding: 6px 15px;
+  cursor: pointer;
+}
+
+.EventTypeInfo li:last-child {
+  border-bottom: 0px !important;
+}
+
+p {
+  color: #595C5C;
+}
+
+ul {
+  padding: 0px;
+  margin: 0px;
+}
+
+.Toastify__toast-body p {
+  color: #fff;
+}
+
+.flag-box {
+  display: inline-flex;
+  vertical-align: middle;
+  width: 20px;
+  margin-right: 6px;
+  align-items: center;
+}
+
+.iti-flag.be {
+  width: 18px;
+}
+
+.emp-msg {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.ThemeLayout {
+  @apply h-[65px] w-[85px] bg-[#F4F5F6] rounded-lg border border-[#EBECED] px-3 py-2 text-left
+}
+
+.themeBody {
+  @apply flex items-center justify-between gap-1
+}
+
+.themeHead {
+  @apply h-[22px] rounded bg-[#E8EAEA] mb-1
+}
+
+.themeBody .leftContent {
+  @apply h-[24px] bg-[#E8EAEA] w-[60%]
+}
+
+.themeBody .rightContent {
+  @apply flex flex-col w-[40%]
+}
+
+.rightContent .topContent {
+  @apply h-[8px] bg-[#E8EAEA] mb-1
+}
+
+.rightContent .bottomContent {
+  @apply h-[12px] bg-[#E8EAEA]
+}
+
+
+.MinimalThemeFix {
+  @apply h-[65px] w-[85px] bg-[#F4F5F6] rounded-lg border border-[#EBECED] px-3 py-2 text-left
+}
+
+.MinimalThemeFix .titleTheme {
+  @apply text-[14px] text-[#131517] mb-1 font-medium
+}
+
+.MinimalThemeFix .rowFirst {
+  @apply w-[60px] h-[7px] bg-[#E8EAEA] mb-1
+}
+
+.MinimalThemeFix .rowSecond {
+  @apply w-[45px] h-[7px] bg-[#E8EAEA]
+}
+
+.activeBorder {
+  @apply rounded-lg focus:ring-1 focus:ring-[#00000000] hover:ring-1 hover:ring-[#0000] border border-[#131517];
+}
+
+.emp-msg p {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.GridColumnGap {
+  @apply sm:block md:block lg:grid gap-10 far-columns
+}
+
+.BlueBdrButton.blue-icon-svg svg {
+  fill: #1976d2;
+}
+
+.categoryAdding {
+  display: block;
+  width: 46px;
+  height: 46px;
+  margin: 0px auto;
+}
+
+.categoryAdding svg {
+  width: 100%;
+  height: 100%;
+}
+
+.badgeAreaInfo {
+  @apply fixed top-0 left-0 w-[100%] h-[100%] bg-[#F9F9F9] z-[18]
+}
+
+.BadgeInputContentOuter {
+  @apply block relative overflow-auto inline-grid
+}
+
+.BadgeInputContent {
+  @apply h-[100%] flex items-center justify-center relative flex-col
+}
+
+.BadgeInputContentOuter {
+  width: calc(100% - 570px);
+  height: 99vh;
+  height: var(--app-height);
+}
+
+.BadgeInputContent {
+  width: calc(100%);
+}
+
+.rounded-r-radius {
+  border-radius: 0 0.5rem 0.5rem 0 !important;
+}
+
+/* .BadgeImageArea {
+  @apply w-[400px] relative overflow-hidden
+} */
+
+.DrageBageContent {
+  @apply absolute left-0 top-0 w-[100%] h-[100%] text-center
+}
+
+.badgeContentMt {
+  @apply fixed w-[550px] right-[16px] top-[16px] bg-white boxShadow rounded-lg z-[22]
+}
+
+.badgeContentMt {
+  height: calc(100vh - 32px);
+  height: calc(var(--app-height) - 32px);
+}
+
+.pl-24px {
+  padding-left: 24px !important;
+}
+
+.mb-0 {
+  margin-bottom: 0px !important;
+}
+
+.popup-evemt-wrapper {
+  height: calc(100vh - 236px);
+}
+
+@media only screen and (-webkit-min-device-pixel-ratio: 2),
+only screen and (min--moz-device-pixel-ratio: 2),
+only screen and (-o-min-device-pixel-ratio: 2 / 1),
+only screen and (min-device-pixel-ratio: 2),
+only screen and (min-resolution: 192dpi),
+only screen and (min-resolution: 2dppx) {
+  .iti-flag {
+    background-size: 5630px 15px;
+  }
+}
+
+.iti-flag.ac {
+  height: 10px;
+  background-position: 0 0;
+}
+
+.iti-flag.ad {
+  height: 14px;
+  background-position: -22px 0;
+}
+
+.iti-flag.ae {
+  height: 10px;
+  background-position: -44px 0;
+}
+
+.iti-flag.af {
+  height: 14px;
+  background-position: -66px 0;
+}
+
+.iti-flag.ag {
+  height: 14px;
+  background-position: -88px 0;
+}
+
+.iti-flag.ai {
+  height: 10px;
+  background-position: -110px 0;
+}
+
+.iti-flag.al {
+  height: 15px;
+  background-position: -132px 0;
+}
+
+.iti-flag.am {
+  height: 10px;
+  background-position: -154px 0;
+}
+
+.iti-flag.ao {
+  height: 14px;
+  background-position: -176px 0;
+}
+
+.iti-flag.aq {
+  height: 14px;
+  background-position: -198px 0;
+}
+
+.iti-flag.ar {
+  height: 13px;
+  background-position: -220px 0;
+}
+
+.iti-flag.as {
+  height: 10px;
+  background-position: -242px 0;
+}
+
+.iti-flag.at {
+  height: 14px;
+  background-position: -264px 0;
+}
+
+.iti-flag.xa {
+  height: 10px;
+  background-position: -286px 0;
+}
+
+.iti-flag.au {
+  height: 10px;
+  background-position: -286px 0;
+}
+
+.iti-flag.aw {
+  height: 14px;
+  background-position: -308px 0;
+}
+
+.iti-flag.ax {
+  height: 13px;
+  background-position: -330px 0;
+}
+
+.iti-flag.az {
+  height: 10px;
+  background-position: -352px 0;
+}
+
+.iti-flag.ba {
+  height: 10px;
+  background-position: -374px 0;
+}
+
+.iti-flag.bb {
+  height: 14px;
+  background-position: -396px 0;
+}
+
+.iti-flag.bd {
+  height: 12px;
+  background-position: -418px 0;
+}
+
+.iti-flag.be {
+  height: 15px;
+  background-position: -440px 0;
+}
+
+.iti-flag.bf {
+  height: 14px;
+  background-position: -460px 0;
+}
+
+.iti-flag.bg {
+  height: 12px;
+  background-position: -482px 0;
+}
+
+.iti-flag.bh {
+  height: 12px;
+  background-position: -504px 0;
+}
+
+.iti-flag.bi {
+  height: 12px;
+  background-position: -526px 0;
+}
+
+.iti-flag.bj {
+  height: 14px;
+  background-position: -548px 0;
+}
+
+.iti-flag.bl {
+  height: 14px;
+  background-position: -570px 0;
+}
+
+.iti-flag.bm {
+  height: 10px;
+  background-position: -592px 0;
+}
+
+.iti-flag.bn {
+  height: 10px;
+  background-position: -614px 0;
+}
+
+.iti-flag.bo {
+  height: 14px;
+  background-position: -636px 0;
+}
+
+.iti-flag.bq {
+  height: 14px;
+  background-position: -658px 0;
+}
+
+.iti-flag.br {
+  height: 14px;
+  background-position: -680px 0;
+}
+
+.iti-flag.bs {
+  height: 10px;
+  background-position: -702px 0;
+}
+
+.iti-flag.bt {
+  height: 14px;
+  background-position: -724px 0;
+}
+
+.iti-flag.bv {
+  height: 15px;
+  background-position: -746px 0;
+}
+
+.iti-flag.bw {
+  height: 14px;
+  background-position: -768px 0;
+}
+
+.iti-flag.by {
+  height: 10px;
+  background-position: -790px 0;
+}
+
+.iti-flag.bz {
+  height: 14px;
+  background-position: -812px 0;
+}
+
+.iti-flag.ca {
+  height: 10px;
+  background-position: -834px 0;
+}
+
+.iti-flag.cc {
+  height: 10px;
+  background-position: -856px 0;
+}
+
+.iti-flag.cd {
+  height: 15px;
+  background-position: -878px 0;
+}
+
+.iti-flag.cf {
+  height: 14px;
+  background-position: -900px 0;
+}
+
+.iti-flag.cg {
+  height: 14px;
+  background-position: -922px 0;
+}
+
+.iti-flag.ch {
+  width: 15px;
+  height: 15px;
+  background-position: -944px 0;
+}
+
+.iti-flag.ci {
+  height: 14px;
+  background-position: -961px 0;
+}
+
+.iti-flag.ck {
+  height: 10px;
+  background-position: -983px 0;
+}
+
+.iti-flag.cl {
+  height: 14px;
+  background-position: -1005px 0;
+}
+
+.iti-flag.cm {
+  height: 14px;
+  background-position: -1027px 0;
+}
+
+.iti-flag.cn {
+  height: 14px;
+  background-position: -1049px 0;
+}
+
+.iti-flag.co {
+  height: 14px;
+  background-position: -1071px 0;
+}
+
+.iti-flag.cp {
+  height: 14px;
+  background-position: -1093px 0;
+}
+
+.iti-flag.cr {
+  height: 12px;
+  background-position: -1115px 0;
+}
+
+.iti-flag.cu {
+  height: 10px;
+  background-position: -1137px 0;
+}
+
+.iti-flag.cv {
+  height: 12px;
+  background-position: -1159px 0;
+}
+
+.iti-flag.cw {
+  height: 14px;
+  background-position: -1181px 0;
+}
+
+.iti-flag.cx {
+  height: 10px;
+  background-position: -1203px 0;
+}
+
+.iti-flag.cy {
+  height: 13px;
+  background-position: -1225px 0;
+}
+
+.iti-flag.cz {
+  height: 14px;
+  background-position: -1247px 0;
+}
+
+.iti-flag.de {
+  height: 12px;
+  background-position: -1269px 0;
+}
+
+.iti-flag.dg {
+  height: 10px;
+  background-position: -1291px 0;
+}
+
+.iti-flag.dj {
+  height: 14px;
+  background-position: -1313px 0;
+}
+
+.iti-flag.dk {
+  height: 15px;
+  background-position: -1335px 0;
+}
+
+.iti-flag.dm {
+  height: 10px;
+  background-position: -1357px 0;
+}
+
+.iti-flag.do {
+  height: 13px;
+  background-position: -1379px 0;
+}
+
+.iti-flag.dz {
+  height: 14px;
+  background-position: -1401px 0;
+}
+
+.iti-flag.ea {
+  height: 14px;
+  background-position: -1423px 0;
+}
+
+.iti-flag.ec {
+  height: 14px;
+  background-position: -1445px 0;
+}
+
+.iti-flag.ee {
+  height: 13px;
+  background-position: -1467px 0;
+}
+
+.iti-flag.eg {
+  height: 14px;
+  background-position: -1489px 0;
+}
+
+.iti-flag.eh {
+  height: 10px;
+  background-position: -1511px 0;
+}
+
+.iti-flag.er {
+  height: 10px;
+  background-position: -1533px 0;
+}
+
+.iti-flag.es {
+  height: 14px;
+  background-position: -1555px 0;
+}
+
+.iti-flag.et {
+  height: 10px;
+  background-position: -1577px 0;
+}
+
+.iti-flag.eu {
+  height: 14px;
+  background-position: -1599px 0;
+}
+
+.iti-flag.fi {
+  height: 12px;
+  background-position: -1621px 0;
+}
+
+.iti-flag.fj {
+  height: 10px;
+  background-position: -1643px 0;
+}
+
+.iti-flag.fk {
+  height: 10px;
+  background-position: -1665px 0;
+}
+
+.iti-flag.fm {
+  height: 11px;
+  background-position: -1687px 0;
+}
+
+.iti-flag.fo {
+  height: 15px;
+  background-position: -1709px 0;
+}
+
+.iti-flag.fr {
+  height: 14px;
+  background-position: -1731px 0;
+}
+
+.iti-flag.ga {
+  height: 15px;
+  background-position: -1753px 0;
+}
+
+.iti-flag.gb {
+  height: 10px;
+  background-position: -1775px 0;
+}
+
+.iti-flag.xg {
+  height: 10px;
+  background-position: -1775px 0;
+}
+
+.iti-flag.gd {
+  height: 12px;
+  background-position: -1797px 0;
+}
+
+.iti-flag.ge {
+  height: 14px;
+  background-position: -1819px 0;
+}
+
+.iti-flag.gf {
+  height: 14px;
+  background-position: -1841px 0;
+}
+
+.iti-flag.gg {
+  height: 14px;
+  background-position: -1863px 0;
+}
+
+.iti-flag.xu {
+  height: 14px;
+  background-position: -1863px 0;
+}
+
+.iti-flag.gh {
+  height: 14px;
+  background-position: -1885px 0;
+}
+
+.iti-flag.gi {
+  height: 10px;
+  background-position: -1907px 0;
+}
+
+.iti-flag.gl {
+  height: 14px;
+  background-position: -1929px 0;
+}
+
+.iti-flag.gm {
+  height: 14px;
+  background-position: -1951px 0;
+}
+
+.iti-flag.gn {
+  height: 14px;
+  background-position: -1973px 0;
+}
+
+.iti-flag.gp {
+  height: 14px;
+  background-position: -1995px 0;
+}
+
+.iti-flag.gq {
+  height: 14px;
+  background-position: -2017px 0;
+}
+
+.iti-flag.gr {
+  height: 14px;
+  background-position: -2039px 0;
+}
+
+.iti-flag.gs {
+  height: 10px;
+  background-position: -2061px 0;
+}
+
+.iti-flag.gt {
+  height: 13px;
+  background-position: -2083px 0;
+}
+
+.iti-flag.gu {
+  height: 11px;
+  background-position: -2105px 0;
+}
+
+.iti-flag.gw {
+  height: 10px;
+  background-position: -2127px 0;
+}
+
+.iti-flag.gy {
+  height: 12px;
+  background-position: -2149px 0;
+}
+
+.iti-flag.hk {
+  height: 14px;
+  background-position: -2171px 0;
+}
+
+.iti-flag.hm {
+  height: 10px;
+  background-position: -2193px 0;
+}
+
+.iti-flag.hn {
+  height: 10px;
+  background-position: -2215px 0;
+}
+
+.iti-flag.hr {
+  height: 10px;
+  background-position: -2237px 0;
+}
+
+.iti-flag.ht {
+  height: 12px;
+  background-position: -2259px 0;
+}
+
+.iti-flag.hu {
+  height: 10px;
+  background-position: -2281px 0;
+}
+
+.iti-flag.ic {
+  height: 14px;
+  background-position: -2303px 0;
+}
+
+.iti-flag.id {
+  height: 14px;
+  background-position: -2325px 0;
+}
+
+.iti-flag.ie {
+  height: 10px;
+  background-position: -2347px 0;
+}
+
+.iti-flag.il {
+  height: 15px;
+  background-position: -2369px 0;
+}
+
+.iti-flag.xm {
+  height: 10px;
+  background-position: -2391px 0;
+}
+
+.iti-flag.in {
+  height: 14px;
+  background-position: -2413px 0;
+}
+
+.iti-flag.io {
+  height: 10px;
+  background-position: -2435px 0;
+}
+
+.iti-flag.iq {
+  height: 14px;
+  background-position: -2457px 0;
+}
+
+.iti-flag.ir {
+  height: 12px;
+  background-position: -2479px 0;
+}
+
+.iti-flag.is {
+  height: 15px;
+  background-position: -2501px 0;
+}
+
+.iti-flag.it {
+  height: 14px;
+  background-position: -2523px 0;
+}
+
+.iti-flag.xj {
+  height: 12px;
+  background-position: -2545px 0;
+}
+
+.iti-flag.jm {
+  height: 10px;
+  background-position: -2567px 0;
+}
+
+.iti-flag.jo {
+  height: 10px;
+  background-position: -2589px 0;
+}
+
+.iti-flag.jp {
+  height: 14px;
+  background-position: -2611px 0;
+}
+
+.iti-flag.ke {
+  height: 14px;
+  background-position: -2633px 0;
+}
+
+.iti-flag.kg {
+  height: 12px;
+  background-position: -2655px 0;
+}
+
+.iti-flag.kh {
+  height: 13px;
+  background-position: -2677px 0;
+}
+
+.iti-flag.ki {
+  height: 10px;
+  background-position: -2699px 0;
+}
+
+.iti-flag.km {
+  height: 12px;
+  background-position: -2721px 0;
+}
+
+.iti-flag.kn {
+  height: 14px;
+  background-position: -2743px 0;
+}
+
+.iti-flag.kp {
+  height: 10px;
+  background-position: -2765px 0;
+}
+
+.iti-flag.kr {
+  height: 14px;
+  background-position: -2787px 0;
+}
+
+.iti-flag.kw {
+  height: 10px;
+  background-position: -2809px 0;
+}
+
+.iti-flag.ky {
+  height: 10px;
+  background-position: -2831px 0;
+}
+
+.iti-flag.kz {
+  height: 10px;
+  background-position: -2853px 0;
+}
+
+.iti-flag.la {
+  height: 14px;
+  background-position: -2875px 0;
+}
+
+.iti-flag.lb {
+  height: 14px;
+  background-position: -2897px 0;
+}
+
+.iti-flag.lc {
+  height: 10px;
+  background-position: -2919px 0;
+}
+
+.iti-flag.li {
+  height: 12px;
+  background-position: -2941px 0;
+}
+
+.iti-flag.lk {
+  height: 10px;
+  background-position: -2963px 0;
+}
+
+.iti-flag.lr {
+  height: 11px;
+  background-position: -2985px 0;
+}
+
+.iti-flag.ls {
+  height: 14px;
+  background-position: -3007px 0;
+}
+
+.iti-flag.lt {
+  height: 12px;
+  background-position: -3029px 0;
+}
+
+.iti-flag.lu {
+  height: 12px;
+  background-position: -3051px 0;
+}
+
+.iti-flag.lv {
+  height: 10px;
+  background-position: -3073px 0;
+}
+
+.iti-flag.ly {
+  height: 10px;
+  background-position: -3095px 0;
+}
+
+.iti-flag.ma {
+  height: 14px;
+  background-position: -3117px 0;
+}
+
+.iti-flag.mc {
+  width: 19px;
+  height: 15px;
+  background-position: -3139px 0;
+}
+
+.iti-flag.md {
+  height: 10px;
+  background-position: -3160px 0;
+}
+
+.iti-flag.me {
+  height: 10px;
+  background-position: -3182px 0;
+}
+
+.iti-flag.mf {
+  height: 14px;
+  background-position: -3204px 0;
+}
+
+.iti-flag.mg {
+  height: 14px;
+  background-position: -3226px 0;
+}
+
+.iti-flag.mh {
+  height: 11px;
+  background-position: -3248px 0;
+}
+
+.iti-flag.mk {
+  height: 10px;
+  background-position: -3270px 0;
+}
+
+.iti-flag.ml {
+  height: 14px;
+  background-position: -3292px 0;
+}
+
+.iti-flag.mm {
+  height: 14px;
+  background-position: -3314px 0;
+}
+
+.iti-flag.mn {
+  height: 10px;
+  background-position: -3336px 0;
+}
+
+.iti-flag.mo {
+  height: 14px;
+  background-position: -3358px 0;
+}
+
+.iti-flag.mp {
+  height: 10px;
+  background-position: -3380px 0;
+}
+
+.iti-flag.mq {
+  height: 14px;
+  background-position: -3402px 0;
+}
+
+.iti-flag.mr {
+  height: 14px;
+  background-position: -3424px 0;
+}
+
+.iti-flag.ms {
+  height: 10px;
+  background-position: -3446px 0;
+}
+
+.iti-flag.mt {
+  height: 14px;
+  background-position: -3468px 0;
+}
+
+.iti-flag.mu {
+  height: 14px;
+  background-position: -3490px 0;
+}
+
+.iti-flag.mv {
+  height: 14px;
+  background-position: -3512px 0;
+}
+
+.iti-flag.mw {
+  height: 14px;
+  background-position: -3534px 0;
+}
+
+.iti-flag.mx {
+  height: 12px;
+  background-position: -3556px 0;
+}
+
+.iti-flag.my {
+  height: 10px;
+  background-position: -3578px 0;
+}
+
+.iti-flag.mz {
+  height: 14px;
+  background-position: -3600px 0;
+}
+
+.iti-flag.na {
+  height: 14px;
+  background-position: -3622px 0;
+}
+
+.iti-flag.nc {
+  height: 10px;
+  background-position: -3644px 0;
+}
+
+.iti-flag.ne {
+  width: 18px;
+  height: 15px;
+  background-position: -3666px 0;
+}
+
+.iti-flag.nf {
+  height: 10px;
+  background-position: -3686px 0;
+}
+
+.iti-flag.ng {
+  height: 10px;
+  background-position: -3708px 0;
+}
+
+.iti-flag.ni {
+  height: 12px;
+  background-position: -3730px 0;
+}
+
+.iti-flag.nl {
+  height: 14px;
+  background-position: -3752px 0;
+}
+
+.iti-flag.an {
+  height: 14px;
+  background-position: -5658px 0;
+}
+
+.iti-flag.no {
+  height: 15px;
+  background-position: -3774px 0;
+}
+
+.iti-flag.np {
+  width: 13px;
+  height: 15px;
+  background-position: -3796px 0;
+  background-color: transparent;
+}
+
+.iti-flag.nr {
+  height: 10px;
+  background-position: -3811px 0;
+}
+
+.iti-flag.nu {
+  height: 10px;
+  background-position: -3833px 0;
+}
+
+.iti-flag.nz {
+  height: 10px;
+  background-position: -3855px 0;
+}
+
+.iti-flag.om {
+  height: 10px;
+  background-position: -3877px 0;
+}
+
+.iti-flag.pa {
+  height: 14px;
+  background-position: -3899px 0;
+}
+
+.iti-flag.pe {
+  height: 14px;
+  background-position: -3921px 0;
+}
+
+.iti-flag.pf {
+  height: 14px;
+  background-position: -3943px 0;
+}
+
+.iti-flag.pg {
+  height: 15px;
+  background-position: -3965px 0;
+}
+
+.iti-flag.ph {
+  height: 10px;
+  background-position: -3987px 0;
+}
+
+.iti-flag.pk {
+  height: 14px;
+  background-position: -4009px 0;
+}
+
+.iti-flag.pl {
+  height: 13px;
+  background-position: -4031px 0;
+}
+
+.iti-flag.pm {
+  height: 14px;
+  background-position: -4053px 0;
+}
+
+.iti-flag.pn {
+  height: 10px;
+  background-position: -4075px 0;
+}
+
+.iti-flag.pr {
+  height: 14px;
+  background-position: -4097px 0;
+}
+
+.iti-flag.ps {
+  height: 10px;
+  background-position: -4119px 0;
+}
+
+.iti-flag.pt {
+  height: 14px;
+  background-position: -4141px 0;
+}
+
+.iti-flag.pw {
+  height: 13px;
+  background-position: -4163px 0;
+}
+
+.iti-flag.py {
+  height: 11px;
+  background-position: -4185px 0;
+}
+
+.iti-flag.qa {
+  height: 8px;
+  background-position: -4207px 0;
+}
+
+.iti-flag.re {
+  height: 14px;
+  background-position: -4229px 0;
+}
+
+.iti-flag.ro {
+  height: 14px;
+  background-position: -4251px 0;
+}
+
+.iti-flag.rs {
+  height: 14px;
+  background-position: -4273px 0;
+}
+
+.iti-flag.ru {
+  height: 14px;
+  background-position: -4295px 0;
+}
+
+.iti-flag.rw {
+  height: 14px;
+  background-position: -4317px 0;
+}
+
+.iti-flag.sa {
+  height: 14px;
+  background-position: -4339px 0;
+}
+
+.iti-flag.sb {
+  height: 10px;
+  background-position: -4361px 0;
+}
+
+.iti-flag.sc {
+  height: 10px;
+  background-position: -4383px 0;
+}
+
+.iti-flag.sd {
+  height: 10px;
+  background-position: -4405px 0;
+}
+
+.iti-flag.se {
+  height: 13px;
+  background-position: -4427px 0;
+}
+
+.iti-flag.sg {
+  height: 14px;
+  background-position: -4449px 0;
+}
+
+.iti-flag.sh {
+  height: 10px;
+  background-position: -4471px 0;
+}
+
+.iti-flag.si {
+  height: 10px;
+  background-position: -4493px 0;
+}
+
+.iti-flag.sj {
+  height: 15px;
+  background-position: -4515px 0;
+}
+
+.iti-flag.sk {
+  height: 14px;
+  background-position: -4537px 0;
+}
+
+.iti-flag.sl {
+  height: 14px;
+  background-position: -4559px 0;
+}
+
+.iti-flag.sm {
+  height: 15px;
+  background-position: -4581px 0;
+}
+
+.iti-flag.sn {
+  height: 14px;
+  background-position: -4603px 0;
+}
+
+.iti-flag.so {
+  height: 14px;
+  background-position: -4625px 0;
+}
+
+.iti-flag.sr {
+  height: 14px;
+  background-position: -4647px 0;
+}
+
+.iti-flag.ss {
+  height: 10px;
+  background-position: -4669px 0;
+}
+
+.iti-flag.st {
+  height: 10px;
+  background-position: -4691px 0;
+}
+
+.iti-flag.sv {
+  height: 12px;
+  background-position: -4713px 0;
+}
+
+.iti-flag.sx {
+  height: 14px;
+  background-position: -4735px 0;
+}
+
+.iti-flag.sy {
+  height: 14px;
+  background-position: -4757px 0;
+}
+
+.iti-flag.sz {
+  height: 14px;
+  background-position: -4779px 0;
+}
+
+.iti-flag.ta {
+  height: 10px;
+  background-position: -4801px 0;
+}
+
+.iti-flag.tc {
+  height: 10px;
+  background-position: -4823px 0;
+}
+
+.iti-flag.td {
+  height: 14px;
+  background-position: -4845px 0;
+}
+
+.iti-flag.tf {
+  height: 14px;
+  background-position: -4867px 0;
+}
+
+.iti-flag.tg {
+  height: 13px;
+  background-position: -4889px 0;
+}
+
+.iti-flag.th {
+  height: 14px;
+  background-position: -4911px 0;
+}
+
+.iti-flag.tj {
+  height: 10px;
+  background-position: -4933px 0;
+}
+
+.iti-flag.tk {
+  height: 10px;
+  background-position: -4955px 0;
+}
+
+.iti-flag.tl {
+  height: 10px;
+  background-position: -4977px 0;
+}
+
+.iti-flag.tp {
+  height: 10px;
+  background-position: -4977px 0;
+}
+
+.iti-flag.tm {
+  height: 14px;
+  background-position: -4999px 0;
+}
+
+.iti-flag.tn {
+  height: 14px;
+  background-position: -5021px 0;
+}
+
+.iti-flag.to {
+  height: 10px;
+  background-position: -5043px 0;
+}
+
+.iti-flag.tr {
+  height: 14px;
+  background-position: -5065px 0;
+}
+
+.iti-flag.tt {
+  height: 12px;
+  background-position: -5087px 0;
+}
+
+.iti-flag.tv {
+  height: 10px;
+  background-position: -5109px 0;
+}
+
+.iti-flag.tw {
+  height: 14px;
+  background-position: -5131px 0;
+}
+
+.iti-flag.tz {
+  height: 14px;
+  background-position: -5153px 0;
+}
+
+.iti-flag.ua {
+  height: 14px;
+  background-position: -5175px 0;
+}
+
+.iti-flag.ug {
+  height: 14px;
+  background-position: -5197px 0;
+}
+
+.iti-flag.um {
+  height: 11px;
+  background-position: -5219px 0;
+}
+
+.iti-flag.us {
+  height: 11px;
+  background-position: -5241px 0;
+}
+
+.iti-flag.uy {
+  height: 14px;
+  background-position: -5263px 0;
+}
+
+.iti-flag.uz {
+  height: 10px;
+  background-position: -5285px 0;
+}
+
+.iti-flag.va {
+  width: 15px;
+  height: 15px;
+  background-position: -5307px 0;
+}
+
+.iti-flag.vc {
+  height: 14px;
+  background-position: -5324px 0;
+}
+
+.iti-flag.ve {
+  height: 14px;
+  background-position: -5346px 0;
+}
+
+.iti-flag.vg {
+  height: 10px;
+  background-position: -5368px 0;
+}
+
+.iti-flag.vi {
+  height: 14px;
+  background-position: -5390px 0;
+}
+
+.iti-flag.vn {
+  height: 14px;
+  background-position: -5412px 0;
+}
+
+.iti-flag.vu {
+  height: 12px;
+  background-position: -5434px 0;
+}
+
+.iti-flag.wf {
+  height: 14px;
+  background-position: -5456px 0;
+}
+
+.iti-flag.ws {
+  height: 10px;
+  background-position: -5478px 0;
+}
+
+.iti-flag.xk {
+  height: 15px;
+  background-position: -5500px 0;
+}
+
+.iti-flag.ye {
+  height: 14px;
+  background-position: -5522px 0;
+}
+
+.iti-flag.yt {
+  height: 14px;
+  background-position: -5544px 0;
+}
+
+.iti-flag.za {
+  height: 14px;
+  background-position: -5566px 0;
+}
+
+.iti-flag.zm {
+  height: 14px;
+  background-position: -5588px 0;
+}
+
+.iti-flag.zw {
+  height: 10px;
+  background-position: -5610px 0;
+}
+
+.iti-flag.yu {
+  height: 14px;
+  background-position: -5634px 0;
+}
+
+.iti-flag {
+  width: 20px;
+  height: 15px;
+  box-shadow: 0 0 1px 0 #888;
+  background: #eaeaea url("/Assets/Images/flags.png");
+  background-repeat: no-repeat;
+  background-color: #dbdbdb;
+  background-position: 20px 0;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 2px;
+  height: 2px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #000;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #000;
+}
+
+::-moz-scrollbar {
+  width: 2px;
+  height: 2px;
+}
+
+/* Track */
+::-moz-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-moz-scrollbar-thumb {
+  background: #000;
+}
+
+/* Handle on hover */
+::-moz-scrollbar-thumb:hover {
+  background: #000;
+}
+
+.tab-buttons::-webkit-scrollbar {
+  display: none;
+}
+
+.hover-img:hover img {
+  filter: brightness(0.6);
+  transition: 0.15s all cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ReactCrop__child-wrapper img {
+  position: relative !important;
+}
+
+.rounded-full-overwrite {
+  border-radius: 100px;
+}
+
+/* .SpekerListAllInfo {
+  width: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.SpekerListAllInfo .inputGroup {
+  background-color: #fff;
+  border: 1px solid #f1f1f1;
+  border-radius: 5px;
+  display: inline-block;
+  margin: 18px 6px 0;
+  position: relative;
+  width: 31.77%;
+} */
+
+.EmbedEventBtn {
+  @apply flex bg-[#FFFFFF] px-1 py-1 boxShadow rounded-lg flex gap-3 items-center w-full;
+}
+
+.PaddCustom {
+  padding: 8px 8px !important;
+}
+
+.iconSvgBg {
+  background: rgb(14 148 255 / 10%);
+  padding: 10px 10px;
+  border-radius: 8px;
+}
+
+.SpekerListAllInfo {
+  width: 100%;
+}
+
+.SpekerListAllInfo .inputGroup {
+  background-color: #fff;
+  border: 1px solid #f1f1f1;
+  border-radius: 5px;
+  display: inline-block;
+  position: relative;
+}
+
+.SpekerListAllInfo .inputGroup input {
+  width: 32px;
+  height: 32px;
+  order: 1;
+  z-index: 2;
+  position: absolute;
+  right: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  visibility: hidden;
+}
+
+.SpekerListAllInfo .inputGroup label {
+  padding: 16px 16px;
+  font-size: 14px;
+  display: flex;
+  text-align: left;
+  color: #333333;
+  font-weight: 500;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+  transition: color 200ms ease-in;
+  word-break: break-word;
+  border-radius: 10px;
+}
+
+.SpekerListAllInfo .inputGroup label span {
+  margin-right: 10px;
+}
+
+.SpekerListAllInfo .inputGroup label::before {
+  width: 100%;
+  height: 100%;
+  border-radius: 6px;
+  content: "";
+  background-color: #ffffff;
+  position: absolute;
+  left: 0%;
+  top: 0%;
+  /* transform: translate(-50%, -50%) scale3d(1, 1, 1); */
+  transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+  z-index: -1;
+  border: 1px #0E94FF solid;
+}
+
+.SpekerListAllInfo .inputGroup label::after {
+  width: 18px;
+  height: 18px;
+  content: "";
+  border: 1px solid #d1d7dc;
+  background-color: #fff;
+  background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.414 11L4 12.414l5.414 5.414L20.828 6.414 19.414 5l-10 10z' fill='%23fff' fill-rule='nonzero'/%3E%3C/svg%3E ");
+  background-repeat: no-repeat;
+  background-position: 2px 3px;
+  border-radius: 50%;
+  z-index: 2;
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  transition: all 200ms ease-in;
+}
+
+.SpekerListAllInfo .inputGroup label span {
+  display: block;
+  font-size: 12px;
+  color: #333333;
+}
+
+.SpekerListAllInfo .inputGroup:last-child {
+  margin-bottom: 0px;
+}
+
+.SpekerListAllInfo input:checked~label:before {
+  opacity: 1;
+}
+
+.SpekerListAllInfo input:checked~label:after {
+  background-color: #0E94FF;
+  border-color: #0E94FF;
+  background-position: 0px 1px;
+  background-size: 20px;
+}
+
+.SpekerListAllInfo .likedEvent {
+  border-bottom: 1px #eaeaea solid;
+  padding: 10px 0;
+}
+
+.SpekerListAllInfo .likedEvent span {
+  font-size: 14px;
+  color: #333333;
+}
+
+.tags-input {
+  display: block;
+  margin: 0 auto;
+  padding: 5px;
+  width: 100%;
+  font-size: 14px;
+  border-radius: 3px;
+}
+
+.tags-input .tag {
+  background-color: #efeff0;
+  border-radius: 100px;
+  display: inline-block;
+  padding: 4px 12px;
+  margin-right: 10px;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.tags-input .tag button {
+  margin-left: 6px;
+}
+
+input {
+  background-color: #fff;
+  caret-color: #000;
+}
+
+.shadow-md {
+  box-shadow: 0 0px 6px 0px rgba(0, 0, 0, .1), 0 2px 4px -2px rgba(0, 0, 0, .1);
+}
+
+.CategoryToggle button>svg {
+  fill: #595c5c;
+}
+
+.CategoryToggle button:hover>svg {
+  fill: #ffffff;
+}
+
+.PatternBgEvent {
+  background: linear-gradient(135deg, #f9f9f9 25%, transparent 25%), linear-gradient(225deg, #f9f9f9 25%, transparent 25%), linear-gradient(45deg, #f9f9f9 25%, transparent 25%), linear-gradient(315deg, #f9f9f9 25%, #f1f1f1 25%);
+  background-position: 32px 0, 32px 0, 0 0, 0 0;
+  background-size: 64px 64px;
+  border: 1px #eeeeee solid;
+}
+
+.boxShadowInfo {
+  box-shadow: 0 0 8px rgb(0 0 0 / 15%);
+}
+
+.dropdownListCommon {
+  @apply w-full px-3 py-2 text-sm rounded-lg justify-between flex items-center gap-5 h-[40px] stroke-[#595C5C] fill-[#595C5C] border border-[#EBECED] bg-[#ffffff]
+}
+
+.Fontdropdown {
+  @apply boxShadowInfo right-0 z-10 mt-2 px-4 py-2 w-[100%] origin-top-right rounded-md bg-white ring-1 ring-black ring-opacity-5 focus:outline-none;
+}
+
+.Fontdropdown li {
+  padding: 4px 0px;
+  font-size: 16px;
+  color: #131517;
+  cursor: pointer;
+}
+
+.inputBadge {
+  @apply w-full border text-[#131517] border-[#EBECED] rounded-lg h-[40px] px-2 focus:outline-none transition-all outline-none
+}
+
+.AddFieldHere {
+  @apply boxShadowInfo right-0 z-10 mt-2 w-[80%] origin-top-right rounded-lg bg-white ring-1 ring-black ring-opacity-5 focus:outline-none;
+}
+
+.AddFieldHere .MenuListUl {
+  @apply px-4 py-2;
+}
+
+.AddFieldHere li {
+  padding: 4px 0px;
+  font-size: 14px;
+  color: #131517;
+  cursor: pointer;
+}
+
+.SearchInputBox {
+  @apply bg-[#fff] border border-[#EFEFF0] rounded-[8px] hover:outline-none focus:outline-none
+}
+
+.AddFieldHere .SearchBoxCustomFields .searchInput {
+  @apply m-0
+}
+
+.AddFieldHere .SearchBoxCustomFields .searchInput .searchIconFiels {
+  @apply hidden
+}
+
+.AddFieldHere .SearchBoxCustomFields .searchInput .FieldInput .SearchInput {
+  @apply rounded-t-lg h-[40px] px-3 focus:outline-none focus:border-b-[#EBECED] hover:outline-none hover:border-b-[#EBECED] outline-none border border-[#EBECED] rounded-none
+}
+
+.invitedBg {
+  background-color: #dbefff;
+}
+
+.goingBg {
+  background-color: #d6e7db;
+}
+
+
+.BadgeLength {
+  height: calc(100vh - 400px);
+  height: calc(var(--app-height) - 400px);
+}
+
+.RegisterListForm {
+  width: auto;
+}
+
+.RegisterListForm .inputGroup {
+  background-color: #fff;
+  display: inline-block;
+  /* position: relative; */
+}
+
+.RegisterListForm .inputGroup input {
+  width: 32px;
+  height: 32px;
+  order: 1;
+  z-index: 2;
+  position: absolute;
+  right: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  visibility: hidden;
+}
+
+.RegisterListForm .inputGroup label {
+  padding-right: 28px;
+  font-size: 14px;
+  display: flex;
+  text-align: left;
+  color: #333333;
+  font-weight: 500;
+  cursor: pointer;
+  position: relative;
+  z-index: 2;
+  transition: color 200ms ease-in;
+  word-break: break-word;
+  border-radius: 10px;
+}
+
+.RegisterListForm .inputGroup label span {
+  margin-right: 10px;
+}
+
+.RegisterListForm .inputGroup label::before {
+  width: 100%;
+  height: 100%;
+  border-radius: 6px;
+  content: "";
+  background-color: #ffffff;
+  position: absolute;
+  left: 0%;
+  top: 0%;
+  /* transform: translate(-50%, -50%) scale3d(1, 1, 1); */
+  transition: all 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0;
+  z-index: -1;
+}
+
+.RegisterListForm .inputGroup label::after {
+  width: 18px;
+  height: 18px;
+  content: "";
+  border: 1px solid #312e34;
+  background-color: #fff;
+  background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.414 11L4 12.414l5.414 5.414L20.828 6.414 19.414 5l-10 10z' fill='%23fff' fill-rule='nonzero'/%3E%3C/svg%3E ");
+  background-repeat: no-repeat;
+  background-position: 2px 3px;
+  border-radius: 4px;
+  z-index: 2;
+  position: absolute;
+  right: 0px;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  transition: all 200ms ease-in;
+}
+
+.RegisterListForm .inputGroup label span {
+  display: block;
+  font-size: 12px;
+  color: #333333;
+}
+
+.RegisterListForm .inputGroup:last-child {
+  margin-bottom: 0px;
+}
+
+.RegisterListForm input:checked~label:before {
+  opacity: 1;
+}
+
+.RegisterListForm input:checked~label:after {
+  background-color: #312e34;
+  border-color: #312e34;
+  background-position: 0px 1px;
+  background-size: 20px;
+}
+
+.RegisterListForm .likedEvent {
+  border-bottom: 1px #eaeaea solid;
+  padding: 10px 0;
+}
+
+.RegisterListForm .likedEvent span {
+  font-size: 14px;
+  color: #333333;
+}
+
+.AddCustomFields {
+  @apply relative min-w-[125px] max-w-[100%] w-[auto] px-3 py-2 text-sm rounded-lg justify-between flex items-center gap-5 h-[30px] stroke-[#595C5C] fill-[#595C5C] border border-[#EBECED] bg-[#DFE0E1]
+}
+
+.AddNewField:hover .AddCustomFields {
+  @apply bg-[#595C5C] text-[#FFFFFF] stroke-white
+}
+
+.AddCustomFields svg {
+  @apply absolute right-2
+}
+
+.TabInnerContainer {
+  @apply px-4 pb-8;
+}
+
+.paddCustom {
+  @apply pl-[34px] pr-[40px]
+}
+
+.paddCustomLeft {
+  @apply pl-[34px]
+}
+
+.TimeZoneDdl .searchInput {
+  @apply mt-0 mb-2
+}
+
+.searchInput .FieldInput .SearchInput .searchIconFiels {
+  @apply hidden
+}
+
+.EvemtTypeField {
+  @apply relative flex items-center justify-between bg-[#F0F1F1] px-3 py-4 rounded-lg text-left text-[#595C5C] text-[14px];
+}
+
+
+
+.popup {
+  z-index: 9;
+  background-color: #f1f1f1;
+  border: 1px solid #d3d3d3;
+  text-align: center;
+  min-height: 150px;
+  min-width: 300px;
+  max-height: 300px;
+  max-width: 600px;
+}
+
+/*Drgable */
+
+.popup {
+  position: absolute;
+  /*resize: both; !*enable this to css resize*! */
+  overflow: auto;
+}
+
+.popup-header {
+  padding: 10px;
+  cursor: move;
+  z-index: 10;
+  background-color: #2196f3;
+  color: #fff;
+}
+
+/*Resizeable*/
+
+.popup .resizer-right {
+  width: 5px;
+  height: 100%;
+  background: transparent;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  cursor: e-resize;
+}
+
+.popup .resizer-bottom {
+  width: 100%;
+  height: 5px;
+  background: transparent;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  cursor: n-resize;
+}
+
+.popup .resizer-both {
+  width: 5px;
+  height: 5px;
+  background: transparent;
+  z-index: 10;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  cursor: nw-resize;
+}
+
+/*NOSELECT*/
+
+.popup * {
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  -khtml-user-select: none;
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */
+}
+
+/* .GeneralBadgesCard {
+  display: none;
+} */
+
+/* .PhysicalBadgesCard {
+  display: none;
+} */
+.CircularProgressbar {
+  width: 15px !important;
+}
+
+/* .customResizeBox {
+  @apply absolute w-full h-full top-0 left-0
+} */
+.text-dark {
+  color: #131517
+}
+
+.badgeContentMt .AppearanceTheme {
+  height: calc(100vh - 170px);
+  height: calc(var(--app-height) - 170px);
+}
+
+/* .invite-guest-height {
+  min-height: calc(80vh - 100px);
+  height: calc(90vh - 120px);
+  overflow: auto;
+} */
+.invite-guest-height {
+  height: calc(90vh - 220px);
+  min-height: calc(80vh - 119px);
+  overflow: auto;
+}
+
+.custom-question-input {
+  padding-right: 136px;
+}
+
+.gblcbk {
+  border: 1.5px dashed #f00 !important;
+}
+
+.info-icon svg {
+  width: 15px;
+  margin-top: -4px;
+}
+
+.info-box {
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s all ease;
+}
+
+.info-icon-wrapper:hover .info-box {
+  opacity: 1;
+  visibility: visible;
+  transition: 0.3s all ease;
+}
+
+.min-h-screen {
+  min-height: 100dvh !important;
+}
+
+#myDIV {
+  position: fixed;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: 9999;
+  /* Ensure it appears on top of other content */
+}
+
+#myDIV .content-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+#myDIV .content {
+  background-color: #fff;
+  border-radius: 0;
+  overflow: hidden;
+  max-width: 100%;
+  width: 100%;
+  margin: auto;
+}
+
+#myDIV #close-btn {
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  color: #000;
+  /* Change color to make sure it's visible */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  background-color: #fff;
+  border-radius: 20px
+}
+
+.hidden {
+  display: none;
+}
+
+#myDIV iframe {
+  border: 0;
+  max-height: 100vh;
+  max-height: 100dvh;
+}
+
+button[data-action-id="reg-button"] {
+  background-color: #333537;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  padding: 10px 20px;
+  display: block;
+  cursor: pointer;
+  border: none;
+  margin: 0 auto;
+}
+.reg-button-more {
+  background-color: #333537;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  cursor: pointer;
+  display: block;
+  font-size: 16px;
+  margin: 0 auto;
+  padding: 10px 20px;
+  text-decoration: none;
+}
+
+.description-tabs-wrapper {
+  max-height: calc(100vh - 298px);
+  max-height: calc(100dvh - 298px);
+  height: calc(100dvh - 298px);
+  width: calc(100% + 10px);
+  left: -10px;
+  position: relative;
+  padding-left: 10px;
+}
+
+.editor-tooltip {
+  display: none;
+  position: fixed;
+  background-color: #fff;
+  z-index: 9;
+  box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.1);
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.editor h1 {
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.editor h2 {
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 1.5;
+}
+
+.editor blockquote,
+.editor .blockquote {
+  background-color: #eee;
+  border-radius: 8px;
+  padding: 10px 15px;
+}
+
+.editor ul {
+  list-style: disc;
+  padding-left: 25px;
+}
+
+.editor ol {
+  list-style: decimal;
+  padding-left: 25px;
+}
+
+.editor a {
+  color: blue;
+}
+
+.text-editor a[style] {
+  background-color: #333537;
+  color: #fff;
+  font-weight: 500;
+  border-radius: 8px;
+  padding: 8px 20px;
+  margin: 10px auto;
+  display: inline-block;
+  text-align: center;
+  width: fit-content;
+  cursor: pointer;
+  text-decoration: none !important;
+}
+
+#toolbar svg {
+  width: 20px;
+  height: 20px;
+}
+
+.ql-snow .ql-toolbar button,
+.ql-snow.ql-toolbar button {
+  width: 100%;
+  text-align: left;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.ql-toolbar.ql-snow {
+  border: none !important;
+  font-family: unset !important;
+}
+
+.editor-toolbar button,
+.editor-toolbar.ql-snow.ql-toolbar button {
+  display: flex !important;
+  width: 100% !important;
+  text-align: left;
+  padding: 1px 10px;
+  border-radius: 4px;
+  gap: 10px;
+  align-items: center;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.editor-toolbar button:hover,
+.editor-toolbar.ql-snow.ql-toolbar button:hover,
+.editor-toolbar button:focus,
+.editor-toolbar.ql-snow.ql-toolbar button:focus {
+  background: #eee;
+  color: #595c5c
+}
+
+.editor-toolbar {
+  background-color: #fff;
+  z-index: 9;
+  box-shadow: 0 0 10px 1px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 5px;
+  border: 1px solid #EBECED;
+}
+
+.ql-editor {
+  min-height: 150px;
+  border-radius: 8px !important;
+}
+
+.ql-container.ql-snow {
+  border-radius: 8px !important;
+  border: 1px solid #EBECED !important;
+}
+
+.ql-container {
+  font-size: 15px !important;
+}
+
+.seprateLinr::before {
+  height: 1px;
+  width: 100%;
+  background-color: #EBECED;
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 12px;
+}
+
+.seprateLinr span {
+  position: relative;
+  padding: 0 5px;
+  background-color: #fff;
+}
+
+.resposive-table::-webkit-scrollbar {
+  height: 8px !important;
+  width: 2px;
+}
+
+.resposive-table::-webkit-scrollbar-thumb,
+.resposive-table::-webkit-scrollbar-thumb:hover {
+  background-color: #b6b3b3;
+}
+
+.seprateLinr::before {
+  height: 1px;
+  width: 100%;
+  background-color: #EBECED;
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 12px;
+}
+
+.seprateLinr span {
+  position: relative;
+  padding: 0 5px;
+  background-color: #fff;
+}
+.m-badge-preview {
+  background-color: transparent;
+}
+.m-badge-preview div#mBadge {
+  transform: scale(0.5);
+  transform-origin: left top;
+}
+/* .m-badge-preview form > div {
+  max-height: 384px;
+} */
+.sub-cat {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease-out!important; 
+}
+.mail-time-picker .time{display: inline-block;background-color: transparent!important;vertical-align: middle;}
+.mail-date-picker .date{display: inline-block;background-color: transparent!important;vertical-align: middle;}
+
+
+
+
+@media(max-width:1023px) {}
+
+@media(max-width:991px) {
+  .badgeContentMt {
+    width: 350px;
+  }
+
+  .BadgeInputContentOuter {
+    width: calc(100% - 370px);
+  }
+}
+
+@media(max-width:767px) {
+  .custom-question-wrapper .FieldInput input {
+    padding-right: 10px !important;
+  }
+
+  .badgeContentMt {
+    --tw-bg-opacity: 1;
+    background-color: rgb(255 255 255/var(--tw-bg-opacity));
+    border-radius: 0;
+    box-shadow: 0 0 10px #00000015;
+    position: relative;
+    right: 0;
+    top: 0;
+    width: 100%;
+    z-index: 22;
+  }
+
+  .GeneralBadgesCard {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column-reverse;
+    width: 100%;
+    height: 100vh;
+    overflow: auto;
+
+  }
+
+  .badgeAreaInfo {
+    --tw-bg-opacity: 1;
+    background-color: rgb(249 249 249/var(--tw-bg-opacity));
+    height: auto;
+    left: 0;
+    position: static;
+    top: 0;
+    width: 100%;
+    z-index: 18;
+  }
+
+  .BadgeInputContentOuter {
+    height: auto;
+    width: 100%;
+  }
+
+  .badgeContentMt .AppearanceTheme {
+    height: 350px;
+  }
+
+
+}
+
+@media(max-width:639px) {
+  .invite-guest-height {
+    height: auto;
+    min-height: auto;
+    overflow: unset;
+  }
+
+  .mob-over {
+    height: calc(100vh - 130px);
+    height: calc(var(--app-height) - 130px);
+    overflow: auto;
+  }
+
+}
+
+.resposive-table::-webkit-scrollbar {
+  height: 8px !important;
+  width: 2px;
+}

@@ -1,0 +1,136 @@
+.modal {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 0%;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+  z-index: 99;
+
+}
+
+.modal.open {
+
+  width: 100%;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+}
+
+.modal.open .overlay {
+  display: block;
+}
+
+.modal-content {
+  transform: translateX(calc(100% + 100px));
+  transition: transform 0.3s ease-out;
+  width: 550px;
+  background-color: #fff;
+  position: absolute;
+  right: 15px;
+  height: calc(100vh - 30px);
+  top: 15px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.modal.open .modal-content {
+  transform: translateX(0);
+  transition: transform 0.3s ease-out;
+}
+
+.close-btn {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.popup-content-wrapper {
+  height: calc(100vh - 176px);
+}
+
+.pr-override {
+  padding-right: 30px !important;
+}
+
+.setting-btn-height svg {
+  height: 20px;
+}
+
+.padding-right-100 {
+  padding-right: 100px !important
+}
+
+
+.tooltip-text {
+  transform: translateX(calc(-50% + 10px));
+}
+
+.tooltip svg {
+  width: 16px;
+}
+
+.tooltip:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
+}
+
+@media(max-width:767px) {
+  .add-q-height {
+    max-height: calc(100vh - 140px);
+    overflow: auto;
+  }
+}
+@media(max-width:640px) {
+  .modal-content {
+   width:300px;
+  }
+}
+
+
+
+/* GOOGLE MAP */
+
+/* Customize the suggestion list container */
+.pac-container {
+  background-color: #f4f4f4;
+  box-shadow: 0 2px 6px transparent;
+  border: 1px solid #e6e6e6;
+  border-top: 0px !important;
+  margin: 0px !important;
+}
+.pac-container::after {
+  display: none;
+}
+/* Customize the individual suggestions */
+.pac-item {
+  padding: 5px 8px;
+  cursor: pointer;
+}
+
+/* Style the highlighted suggestion */
+.pac-item-query {
+  font-weight: bold;
+}
+
+/* Style the inactive suggestions */
+.pac-item,
+.pac-item-query {
+  color: #333;
+}
+
+/* Style the active (highlighted) suggestion */
+.pac-item-selected {
+  background-color: #f5f5f5;
+}
+
+/* Style the suggestion list when it's opened */
+.pac-container.pac-logo:after {
+  background-position: 0 -37px;
+}
